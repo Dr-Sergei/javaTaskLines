@@ -18,7 +18,7 @@ public class LineSegmentService {
     }
 
     public void mergeLineSegments() {
-        // Hier muss die Logik implementiert werden, die überprüft, ob Linien zusammengeführt werden können
+        //toDo Hier muss die Logik implementiert werden, die überprüft, ob Linien zusammengeführt werden können
     }
 
     public LineSegment save(LineSegment lineSegment) {
