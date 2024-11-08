@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=line_segments_db'
+      - 'POSTGRES_PASSWORD=melmac'
+      - 'POSTGRES_USER=alf'
+    ports:
+      - '5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./1.sql:/docker-entrypoint-initdb.d/1.sql
+  volumes:
+    postgres-data:
+      driver:local
+
