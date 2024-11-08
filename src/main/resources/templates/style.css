@@ -1,0 +1,94 @@
+/* Globale Stile */
+body {
+    font-family: 'Arial', sans-serif; /* Amazon-ähnliche Schriftart */
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    background-color: #f4f4f4; /* Helles Hintergrundgrau für den gesamten Body */
+    color: #333; /* Dunkelgrauer Text für guten Kontrast */
+    text-align: center; /* Zentriert den Text im gesamten Body */
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #FF9900; /* Amazon Orange */
+    margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Leichter Schlagschatten */
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Formular Styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #333;
+}
+
+form input[type="file"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #FF9900; /* Amazon Orange */
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e68900; /* Dunkleres Orange beim Hover */
+}
+
+/* Canvas Styling */
+#myCanvas {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 6px solid goldenrod;
+    border-style: groove;
+    box-shadow: 4px 4px 4px 0.5px rgba(0, 0, 0, 0.3);
+    background-color: #fffbf6; /* Helles Beige */
+}
+
+/* Tabelle Styling */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}

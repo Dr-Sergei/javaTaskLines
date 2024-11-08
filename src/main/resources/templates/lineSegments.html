@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Line Segments</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Liniensegmente</h1>
+
+<form th:action="@{/line-segments/upload}" method="post" enctype="multipart/form-data">
+    <label for="file">Datei hochladen</label>
+    <input type="file" id="file" name="file" required/>
+    <button type="submit">Hochladen</button>
+</form>
+
+<div th:if="${message}" th:text="${message}"></div>
+
+<h2>Zusammengefügte Liniensegmente</h2>
+
+<!-- JSON-Daten in einem Data-Attribut oder Script-Tag einbetten -->
+<script th:inline="javascript">
+    /* Die Segmente als JSON in ein JavaScript-Array umwandeln */
+    var lineSegments = [[${segments}]];
+</script>
+
+<canvas id="myCanvas"
+        width="1004"
+        height="909">
+</canvas>
+
+<h2>Tabelle der gespeicherten Liniensegmente sortiert nach Länge</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Startpunkt (x1, y1)</th>
+        <th>Endpunkt (x2, y2)</th>
+        <th>Länge</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="segment : ${segments}">
+        <td th:text="${segment.x1} + ', ' + ${segment.y1}"></td>
+        <td th:text="${segment.x2} + ', ' + ${segment.y2}"></td>
+        <td th:text="${segment.length}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="script1.js"></script>
+</body>
+</html>

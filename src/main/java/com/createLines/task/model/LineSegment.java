@@ -42,9 +42,10 @@ public class LineSegment {
         this.x2 = x2;
         this.y2 = y2;
         this.length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        this.createdAt= LocalDateTime.now();
     }
 
-    public Integer id() {
+    public Integer getId() {
         return id;
     }
 
@@ -52,7 +53,7 @@ public class LineSegment {
         this.id = id;
     }
 
-    public @NotNull Double x1() {
+    public @NotNull Double getX1() {
         return x1;
     }
 
@@ -60,7 +61,7 @@ public class LineSegment {
         this.x1 = x1;
     }
 
-    public @NotNull Double y1() {
+    public @NotNull Double getY1() {
         return y1;
     }
 
@@ -68,7 +69,7 @@ public class LineSegment {
         this.y1 = y1;
     }
 
-    public @NotNull Double x2() {
+    public @NotNull Double getX2() {
         return x2;
     }
 
@@ -76,7 +77,7 @@ public class LineSegment {
         this.x2 = x2;
     }
 
-    public @NotNull Double y2() {
+    public @NotNull Double getY2() {
         return y2;
     }
 
@@ -84,7 +85,7 @@ public class LineSegment {
         this.y2 = y2;
     }
 
-    public @NotNull Double length() {
+    public @NotNull Double getLength() {
         return length;
     }
 
