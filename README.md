@@ -27,7 +27,6 @@ colors.
 ```` 
 bash
 
- docker-compose up -d
  mvn spring-boot:run
  ````
 - This will set up the PostgreSQL container and start the Spring Boot app at http://localhost:8080.
