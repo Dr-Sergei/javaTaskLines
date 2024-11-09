@@ -3,9 +3,7 @@ package com.createLines.task.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.regex.Matcher;
 
 @Entity
 @Table(name = "line_segments")
@@ -13,7 +11,7 @@ public class LineSegment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotNull
     private Double x1;
@@ -45,11 +43,11 @@ public class LineSegment {
         this.createdAt= LocalDateTime.now();
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

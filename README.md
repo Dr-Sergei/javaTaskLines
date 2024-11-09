@@ -13,22 +13,28 @@ colors.
 ## Prerequisites
 
 - Docker and Docker Compose
-- Java 11+
+- Java 21
 - Maven
 
 ## How to Start
 
 - ### Start Docker Engine:
   Ensure Docker is running on your system.
+- ### start docker compose file:
+  ````
+  bash
+  
+  docker-compose up -d
+  ````
 - ### Run the Application:
     - Clone the repository and navigate to the project directory.
     - Start the PostgreSQL container and Spring Boot application:
 
-```` 
-bash
-
- mvn spring-boot:run
- ````
+  ```` 
+  bash
+  
+   mvn spring-boot:run
+   ````
 - This will set up the PostgreSQL container and start the Spring Boot app at http://localhost:8080.
 - ### Access the Application:
     - Open http://localhost:8080 in your browser.

@@ -1,17 +1,29 @@
--- creating a db if it not exists
-CREATE DATABASE IF NOT EXISTS line_segments_db;
+-- Prüfen, ob die Datenbank existiert und erstellen, wenn sie nicht vorhanden ist
+DO
+$$
+BEGIN
+   -- Überprüfen, ob die Datenbank existiert
+   IF NOT EXISTS (SELECT 1 FROM pg_database WHERE datname = 'line_segments_db') THEN
+      -- Wenn sie nicht existiert, erstellen
+      PERFORM pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'line_segments_db';
+      CREATE DATABASE line_segments_db;
+   END IF;
+END
+$$;
 
--- use created db
-USE line_segments_db;
+-- Sicherstellen, dass die richtige Datenbank verwendet wird
+\c line_segments_db;
 
--- creating table if it not exists
+-- Tabelle erstellen, wenn sie noch nicht existiert
 CREATE TABLE IF NOT EXISTS line_segments (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    x1 DOUBLE NOT NULL,
-    y1 DOUBLE NOT NULL,
-    x2 DOUBLE NOT NULL,
-    y2 DOUBLE NOT NULL,
-    length DOUBLE NOT NULL,
+    id BIGSERIAL PRIMARY KEY,
+    x1 DOUBLE PRECISION NOT NULL,
+    y1 DOUBLE PRECISION NOT NULL,
+    x2 DOUBLE PRECISION NOT NULL,
+    y2 DOUBLE PRECISION NOT NULL,
+    length DOUBLE PRECISION NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Optionale Indexierung zur Verbesserung der Performance bei Abfragen nach `length`
+CREATE INDEX IF NOT EXISTS idx_line_segments_length ON line_segments(length);
