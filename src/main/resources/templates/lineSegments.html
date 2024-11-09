@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Line Segments</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <h1>Liniensegmente</h1>
@@ -46,6 +46,6 @@
     </tbody>
 </table>
 
-<script src="script1.js"></script>
+<script th:src="@{/js/script1.js}"></script>
 </body>
 </html>
