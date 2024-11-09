@@ -17,10 +17,6 @@ public class LineSegmentService {
         return lineSegmentRepository.findAll();
     }
 
-    public void mergeLineSegments() {
-        //toDo Hier muss die Logik implementiert werden, die überprüft, ob Linien zusammengeführt werden können
-    }
-
     public LineSegment save(LineSegment lineSegment) {
         return lineSegmentRepository.save(lineSegment);
     }
